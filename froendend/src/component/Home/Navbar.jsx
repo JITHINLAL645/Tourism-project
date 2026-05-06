@@ -32,21 +32,26 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
-        <div>
-          <h1 className="text-3xl font-bold text-white">
-            VistaVoyage
-          </h1>
-          {/* <p className="text-xs text-zinc-300 -mt-1">
-            Travel Beyond Limits
-          </p> */}
-        </div>
+         <div className="flex items-center gap-3">
+  <img
+    src="/tourismicon1.png"
+    alt="VistaVoyage Logo"
+    className="w-10 h-10 object-contain rounded-full"
+  />
+
+  <h2 className="text-4xl font-bold mb-0 tracking-tight bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+    VistaVoyage
+  </h2>
+</div>
 
         {/* Menu */}
         <ul className="hidden md:flex items-center gap-10 text-sm font-medium text-white">
-          <li><a href="#home" className="hover:text-amber-400">Home</a></li>
-          <li><a href="#destinations" className="hover:text-amber-400">Destinations</a></li>
-          <li><a href="#contact" className="hover:text-amber-400">Contact</a></li>
-          <li><a href="#about" className="hover:text-amber-400">About</a></li>
+          <li><a href="/" className="hover:text-amber-400">Home</a></li>
+          <li><a href="/destinations" className="hover:text-amber-400">Destinations</a></li>
+          <li><a href="/blog" className="hover:text-amber-400">Blog</a></li>
+          <li><a href="/services" className="hover:text-amber-400">Services</a></li>
+          <li><a href="/contact" className="hover:text-amber-400">Contact</a></li>
+          <li><a href="/about" className="hover:text-amber-400">About</a></li>
         </ul>
 
         {/* Buttons */}

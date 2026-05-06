@@ -6,10 +6,10 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
-  FaCcVisa,
-  FaCcMastercard,
-  FaCcPaypal,
-  FaCcAmex,
+  // FaCcVisa,
+  // FaCcMastercard,
+  // FaCcPaypal,
+  // FaCcAmex,
 } from "react-icons/fa";
 
 function Footer() {
@@ -17,14 +17,20 @@ function Footer() {
     <footer className="bg-black text-white border-t border-zinc-800 pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-14 border-b border-zinc-800">
 
-          {/* Brand */}
           <div>
-            <h2 className="text-4xl font-bold mb-5 tracking-tight bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-              VistaVoyage
-            </h2>
+            <div className="flex items-center gap-3">
+  <img
+    src="/tourismicon1.png"
+    alt="VistaVoyage Logo"
+    className="w-10 h-10 object-contain rounded-full"
+  />
+
+  <h2 className="text-4xl font-bold mb-0 tracking-tight bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+    VistaVoyage
+  </h2>
+</div>
 
             <p className="text-zinc-400 leading-relaxed mb-6">
               Discover breathtaking destinations, curated tours, and
@@ -44,12 +50,11 @@ function Footer() {
 
               <div className="flex items-center gap-3">
                 <FaPhoneAlt className="text-amber-400" />
-                <span>+91 98765 43210</span>
+                <span>+91 0101010101</span>
               </div>
             </div>
           </div>
 
-          {/* Company */}
           <div>
             <h3 className="text-xl font-semibold mb-6 text-white">Company</h3>
 
@@ -72,7 +77,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
           <div>
             <h3 className="text-xl font-semibold mb-6 text-white">Support</h3>
 
@@ -95,7 +99,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Social + Payments */}
           <div>
             <h3 className="text-xl font-semibold mb-6 text-white">
               Connect With Us
@@ -119,18 +122,17 @@ function Footer() {
               </div>
             </div>
 
-            <h4 className="text-lg font-medium mb-4 text-white">Payments</h4>
+            {/* <h4 className="text-lg font-medium mb-4 text-white">Payments</h4> */}
 
-            <div className="flex gap-4 text-3xl text-zinc-400">
+            {/* <div className="flex gap-4 text-3xl text-zinc-400">
               <FaCcVisa className="hover:text-amber-400 transition" />
               <FaCcMastercard className="hover:text-amber-400 transition" />
               <FaCcPaypal className="hover:text-amber-400 transition" />
               <FaCcAmex className="hover:text-amber-400 transition" />
-            </div>
+            </div> */}
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-zinc-500 text-sm text-center md:text-left">
             © 2026 VistaVoyage. All Rights Reserved.

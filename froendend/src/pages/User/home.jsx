@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Navbar from "../component/Home/Navbar";
-import Footer from "../component/Home/Footer";
+import Navbar from "../../component/Home/Navbar";
+import Footer from "../../component/Home/Footer";
 
 const Home = () => {
-  const [openIndex, setOpenIndex] = useState(1); // Second one open by default like your image
+  const [openIndex, setOpenIndex] = useState(1); 
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -57,41 +57,68 @@ const Home = () => {
       <Navbar />
 
       <section id="home" className="relative min-h-screen flex items-center">
-        <img
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070"
-          alt="Travel"
-          className="absolute inset-0 w-full h-full object-cover"
+  <img
+    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070"
+    alt="Travel"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/60"></div>
+
+  <div className="relative z-20 max-w-6xl mx-auto px-6 text-center pt-20">
+
+    {/* Heading */}
+    <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-white">
+      Your Adventure <br /> Awaits
+    </h1>
+
+    {/* Paragraph */}
+    <p className="text-lg md:text-2xl text-zinc-300 max-w-3xl mx-auto mb-10">
+      Discover breathtaking destinations, curated tours, and unforgettable experiences.
+    </p>
+
+    {/* Buttons */}
+    <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
+      <a
+        href="#destinations"
+        className="px-10 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-amber-400 transition-all duration-300 text-lg"
+      >
+        Explore Destinations
+      </a>
+
+      <a
+        href="#explore"
+        className="px-10 py-4 border-2 border-white rounded-2xl font-semibold hover:bg-white/10 transition-all duration-300 text-lg text-white"
+      >
+        Book Now
+      </a>
+    </div>
+
+    {/* Center Search Bar */}
+    <div className="flex justify-center">
+      <div className="flex items-center bg-white/10 backdrop-blur-md px-4 md:px-6 py-3 rounded-full border border-white/20 w-full max-w-2xl shadow-lg">
+        
+        {/* Icon */}
+        <span className="text-red-500 text-xl mr-3">📍</span>
+
+        {/* Input */}
+        <input
+          type="text"
+          placeholder="Search destinations, cities, places..."
+          className="bg-transparent outline-none text-white placeholder-white/70 flex-1 text-sm md:text-base"
         />
-        <div className="absolute inset-0 bg-black/60"></div>
 
-        <div className="relative z-20 max-w-6xl mx-auto px-6 text-center pt-20">
-          <div className="inline-block bg-white/10 px-6 py-2 rounded-full mb-6 border border-white/20 text-sm tracking-wider">
-            🌍 EXPLORE THE WORLD WITH CONFIDENCE
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
-            Your Adventure <br /> Awaits
-          </h1>
-          <p className="text-lg md:text-2xl text-zinc-300 max-w-3xl mx-auto mb-10">
-            Discover breathtaking destinations, curated tours, and unforgettable experiences.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <a
-              href="#destinations"
-              className="px-10 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-amber-400 transition-all duration-300 text-lg"
-            >
-              Explore Destinations
-            </a>
-            <a
-              href="#explore"
-              className="px-10 py-4 border-2 border-white rounded-2xl font-semibold hover:bg-white/10 transition-all duration-300 text-lg"
-            >
-              Book Now
-            </a>
-          </div>
-        </div>
-      </section>
+        {/* Button */}
+        <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-sm md:text-base transition">
+          Search
+        </button>
 
-      {/* Featured Destinations */}
+      </div>
+    </div>
+
+  </div>
+</section>
+
       <section id="destinations" className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
