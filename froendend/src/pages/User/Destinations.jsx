@@ -92,7 +92,6 @@ const Destinations = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
 
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
         <img
           src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2070"
@@ -103,9 +102,9 @@ const Destinations = () => {
         <div className="absolute inset-0 bg-black/65"></div>
 
         <div className="relative z-20 max-w-6xl mx-auto px-6 text-center pt-20">
-          <div className="inline-block bg-white/10 px-6 py-2 rounded-full mb-6 border border-white/20 text-sm tracking-wider">
-            ✈️ EXPLORE AMAZING PLACES
-          </div>
+          {/* <div className="inline-block bg-white/10 px-6 py-2 rounded-full mb-6 border border-white/20 text-sm tracking-wider">
+            EXPLORE AMAZING PLACES
+          </div> */}
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
             Find Your Dream <br /> Destination
@@ -125,7 +124,6 @@ const Destinations = () => {
         </div>
       </section>
 
-      {/* Destination Cards */}
       <section id="places" className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -178,7 +176,7 @@ const Destinations = () => {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-24 bg-zinc-950 border-t border-zinc-800">
+      {/* <section className="py-24 bg-zinc-950 border-t border-zinc-800">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Can't Find Your Dream Place?
@@ -193,7 +191,7 @@ const Destinations = () => {
             Get Custom Package
           </button>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

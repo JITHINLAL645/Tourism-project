@@ -53,11 +53,9 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
 
-          {/* Left Side */}
           <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 shadow-2xl">
             <h2 className="text-4xl font-bold mb-8">Get in Touch</h2>
 
@@ -118,7 +116,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right Side Form */}
           <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 shadow-2xl">
             <h2 className="text-4xl font-bold mb-4">Send Message</h2>
             <p className="text-zinc-400 mb-8">

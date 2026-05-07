@@ -39,7 +39,6 @@ const Services = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
 
-      {/* Hero Section */}
       <section className="relative min-h-[75vh] flex items-center justify-center">
         <img
           src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070"
@@ -70,7 +69,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Section */}
       <section id="services" className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -113,7 +111,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
       <section className="py-24 bg-zinc-950">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
           <div>

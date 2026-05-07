@@ -81,7 +81,6 @@ const Blog = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
 
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
         <img
           src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070"
@@ -92,9 +91,9 @@ const Blog = () => {
         <div className="absolute inset-0 bg-black/65"></div>
 
         <div className="relative z-20 max-w-6xl mx-auto px-6 text-center pt-20">
-          <div className="inline-block bg-white/10 px-6 py-2 rounded-full mb-6 border border-white/20 text-sm tracking-wider">
-            ✍️ STORIES FROM AROUND THE WORLD
-          </div>
+          {/* <div className="inline-block bg-white/10 px-6 py-2 rounded-full mb-6 border border-white/20 text-sm tracking-wider">
+             STORIES FROM AROUND THE WORLD
+          </div> */}
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
             VistaVoyage <br /> Travel Blog
@@ -107,7 +106,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Tabs */}
       <section className="py-10 bg-black">
         <div className="max-w-7xl mx-auto px-6 flex justify-center">
           <div className="bg-zinc-950 rounded-2xl border border-zinc-800 p-2 flex gap-2">
@@ -136,7 +134,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Blog Cards */}
       <section className="pb-24 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

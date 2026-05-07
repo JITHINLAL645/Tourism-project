@@ -29,9 +29,9 @@ const About = () => {
           </Link>
 
           <div className="max-w-4xl">
-            <div className="inline-block bg-white/10 px-6 py-2 rounded-full mb-6 border border-white/20 text-sm tracking-wider">
-              🌍 ABOUT OUR JOURNEY
-            </div>
+            {/* <div className="inline-block bg-white/10 px-6 py-2 rounded-full mb-6 border border-white/20 text-sm tracking-wider">
+               ABOUT OUR JOURNEY
+            </div> */}
 
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
               Discover The World <br /> With Us
@@ -45,7 +45,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* About Content */}
       <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Image */}
@@ -62,7 +61,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
               Welcome To VistaVoyage Tourism
@@ -90,7 +88,6 @@ const About = () => {
 
       
 
-      {/* CTA */}
       <section className="py-24 bg-black text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">

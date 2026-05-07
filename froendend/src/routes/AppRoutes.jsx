@@ -5,6 +5,10 @@ import About from "../pages/User/About";
 import Blog from "../pages/User/Blog";
 import Contact from "../pages/User/Contact";
 import Services from "../pages/User/Services";
+import Login from "../pages/Auth/Login";
+import Signup from "../pages/Auth/Signup";
+import AdminDashboard from "../pages/Admin/AdminDashboard";
+import AdminUsers from "../pages/Admin/AdminUsers";
 
 function AppRoutes() {
   return (
@@ -15,6 +19,10 @@ function AppRoutes() {
       <Route path="/blog" element={<Blog />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/admindashboard" element={<AdminDashboard />} />
+      <Route path="/adminusers" element={<AdminUsers />} />
       
 
     </Routes>

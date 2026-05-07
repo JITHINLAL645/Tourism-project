@@ -5,28 +5,33 @@ require("dotenv").config();
 
 const app = express();
 
+
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Backend Running");
-});
-const User = require("./models/User");
 
-app.post("/add-user", async (req, res) => {
-  try {
-    const newUser = new User(req.body);
-    await newUser.save();
-    res.send("User Added");
-  } catch (error) {
-    res.status(500).send(error.message);
-  }
-});
+app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/admin", require("./routes/adminRoutes"));
 
-mongoose.connect(process.env.MONGO_URL)
-.then(() => console.log("MongoDB Connected"))
-.catch((err) => console.log(err));
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+// Home Route
+// app.get("/", (req, res) => {
+//   res.send("Backend Running");
+// });
+
+
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => {
+    console.log("MongoDB Connected");
+  })
+  .catch((err) => {
+    console.log("MongoDB Error:", err);
+  });
+
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

@@ -67,17 +67,14 @@ const Home = () => {
 
   <div className="relative z-20 max-w-6xl mx-auto px-6 text-center pt-20">
 
-    {/* Heading */}
     <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-white">
       Your Adventure <br /> Awaits
     </h1>
 
-    {/* Paragraph */}
     <p className="text-lg md:text-2xl text-zinc-300 max-w-3xl mx-auto mb-10">
       Discover breathtaking destinations, curated tours, and unforgettable experiences.
     </p>
 
-    {/* Buttons */}
     <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
       <a
         href="#destinations"
@@ -94,21 +91,17 @@ const Home = () => {
       </a>
     </div>
 
-    {/* Center Search Bar */}
     <div className="flex justify-center">
       <div className="flex items-center bg-white/10 backdrop-blur-md px-4 md:px-6 py-3 rounded-full border border-white/20 w-full max-w-2xl shadow-lg">
         
-        {/* Icon */}
         <span className="text-red-500 text-xl mr-3">📍</span>
 
-        {/* Input */}
         <input
           type="text"
           placeholder="Search destinations, cities, places..."
           className="bg-transparent outline-none text-white placeholder-white/70 flex-1 text-sm md:text-base"
         />
 
-        {/* Button */}
         <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-sm md:text-base transition">
           Search
         </button>
@@ -127,7 +120,6 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Bali Card */}
             <div className="bg-zinc-950 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 shadow-2xl border border-zinc-800">
               <div className="relative">
                 <img
@@ -151,7 +143,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Dubai & Paris Cards (same style) */}
             <div className="bg-zinc-950 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 shadow-2xl border border-zinc-800">
               <div className="relative">
                 <img
@@ -243,7 +234,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
