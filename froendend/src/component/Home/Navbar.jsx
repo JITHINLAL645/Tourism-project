@@ -41,8 +41,7 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   return (
@@ -67,13 +66,32 @@ function Navbar() {
           </h2>
         </div>
 
+        {/* Menu */}
         <ul className="hidden md:flex items-center gap-10 text-sm font-medium text-white">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/destinations">Destinations</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/about">About</Link></li>
+
+          {[
+            ["Home", "/"],
+            ["Destinations", "/destinations"],
+            ["Blog", "/blog"],
+            ["Services", "/services"],
+            ["Contact", "/contact"],
+            ["About", "/about"],
+          ].map(([name, path]) => (
+            <li key={name}>
+              <Link
+                to={path}
+                className="relative group transition duration-300"
+              >
+                <span className="group-hover:text-amber-400 transition duration-300">
+                  {name}
+                </span>
+
+                {/* underline */}
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-amber-400 to-orange-500 transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </li>
+          ))}
+
         </ul>
 
         <div className="hidden md:flex gap-4 items-center">
@@ -81,13 +99,13 @@ function Navbar() {
           {!user ? (
             <>
               <Link to="/login">
-                <button className="px-5 py-2 border border-white text-white rounded-full">
+                <button className="px-5 py-2 border border-white text-white rounded-full hover:border-amber-400 hover:text-amber-400 transition">
                   Login
                 </button>
               </Link>
 
               <Link to="/signup">
-                <button className="px-5 py-2 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full font-semibold">
+                <button className="px-5 py-2 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full font-semibold hover:scale-105 transition">
                   Sign Up
                 </button>
               </Link>

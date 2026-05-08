@@ -69,7 +69,7 @@ function Footer() {
                 Tour Packages
               </li>
               <li className="hover:text-amber-400 transition cursor-pointer">
-                Careers
+                Services
               </li>
               <li className="hover:text-amber-400 transition cursor-pointer">
                 Blog

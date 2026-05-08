@@ -1,7 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
-function AdminSidebar({ handleLogout }) {
+function AdminSidebar() {
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("admin");
+    localStorage.removeItem("token");
+    localStorage.removeItem("adminToken");
+    sessionStorage.clear();
+
+    navigate("/login");
+  };
 
   return (
     <div className="w-72 bg-zinc-950 border-r border-zinc-800 p-6 flex flex-col justify-between min-h-screen">
@@ -35,13 +44,6 @@ function AdminSidebar({ handleLogout }) {
             All Users
           </button>
 
-          {/* <button
-            onClick={() => navigate("/admin/blogs")}
-            className="w-full text-left px-5 py-3 rounded-2xl bg-zinc-900 hover:bg-zinc-800 transition"
-          >
-            Blogs
-          </button> */}
-
         </div>
       </div>
 
@@ -51,6 +53,7 @@ function AdminSidebar({ handleLogout }) {
       >
         Logout
       </button>
+
     </div>
   );
 }
