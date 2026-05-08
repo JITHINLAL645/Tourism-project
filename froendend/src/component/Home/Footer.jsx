@@ -6,11 +6,8 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
-  // FaCcVisa,
-  // FaCcMastercard,
-  // FaCcPaypal,
-  // FaCcAmex,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -21,20 +18,19 @@ function Footer() {
 
           <div>
             <div className="flex items-center gap-3">
-  <img
-    src="/tourismicon1.png"
-    alt="VistaVoyage Logo"
-    className="w-10 h-10 object-contain rounded-full"
-  />
+              <img
+                src="/tourismicon1.png"
+                alt="VistaVoyage Logo"
+                className="w-10 h-10 object-contain rounded-full"
+              />
 
-  <h2 className="text-4xl font-bold mb-0 tracking-tight bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-    VistaVoyage
-  </h2>
-</div>
+              <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                VistaVoyage
+              </h2>
+            </div>
 
-            <p className="text-zinc-400 leading-relaxed mb-6">
-              Discover breathtaking destinations, curated tours, and
-              unforgettable experiences across the world.
+            <p className="text-zinc-400 leading-relaxed mb-6 mt-4">
+              Discover breathtaking destinations, curated tours, and unforgettable experiences across the world.
             </p>
 
             <div className="space-y-3 text-zinc-400 text-sm">
@@ -59,21 +55,37 @@ function Footer() {
             <h3 className="text-xl font-semibold mb-6 text-white">Company</h3>
 
             <ul className="space-y-3 text-zinc-400">
-              <li className="hover:text-amber-400 transition cursor-pointer">
-                About Us
+
+              <li>
+                <Link to="/about" className="hover:text-amber-400 transition">
+                  About Us
+                </Link>
               </li>
-              <li className="hover:text-amber-400 transition cursor-pointer">
-                Destinations
+
+              <li>
+                <Link to="/destinations" className="hover:text-amber-400 transition">
+                  Destinations
+                </Link>
               </li>
-              <li className="hover:text-amber-400 transition cursor-pointer">
-                Tour Packages
+
+              <li>
+                <Link to="#services" className="hover:text-amber-400 transition">
+                  Tour Packages
+                </Link>
               </li>
-              <li className="hover:text-amber-400 transition cursor-pointer">
-                Services
+
+              <li>
+                <Link to="/services" className="hover:text-amber-400 transition">
+                  Services
+                </Link>
               </li>
-              <li className="hover:text-amber-400 transition cursor-pointer">
-                Blog
+
+              <li>
+                <Link to="/blog" className="hover:text-amber-400 transition">
+                  Blog
+                </Link>
               </li>
+
             </ul>
           </div>
 
@@ -81,21 +93,29 @@ function Footer() {
             <h3 className="text-xl font-semibold mb-6 text-white">Support</h3>
 
             <ul className="space-y-3 text-zinc-400">
-              <li className="hover:text-amber-400 transition cursor-pointer">
-                Contact Us
+
+              <li>
+                <Link to="/contact" className="hover:text-amber-400 transition">
+                  Contact Us
+                </Link>
               </li>
+
               <li className="hover:text-amber-400 transition cursor-pointer">
                 FAQs
               </li>
+
               <li className="hover:text-amber-400 transition cursor-pointer">
                 Booking Help
               </li>
+
               <li className="hover:text-amber-400 transition cursor-pointer">
                 Privacy Policy
               </li>
+
               <li className="hover:text-amber-400 transition cursor-pointer">
                 Terms & Conditions
               </li>
+
             </ul>
           </div>
 
@@ -105,6 +125,7 @@ function Footer() {
             </h3>
 
             <div className="flex gap-4 mb-8">
+
               <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-700 flex items-center justify-center hover:bg-amber-400 hover:text-black transition cursor-pointer">
                 <FaFacebookF />
               </div>
@@ -120,36 +141,35 @@ function Footer() {
               <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-700 flex items-center justify-center hover:bg-amber-400 hover:text-black transition cursor-pointer">
                 <FaLinkedinIn />
               </div>
+
             </div>
-
-            {/* <h4 className="text-lg font-medium mb-4 text-white">Payments</h4> */}
-
-            {/* <div className="flex gap-4 text-3xl text-zinc-400">
-              <FaCcVisa className="hover:text-amber-400 transition" />
-              <FaCcMastercard className="hover:text-amber-400 transition" />
-              <FaCcPaypal className="hover:text-amber-400 transition" />
-              <FaCcAmex className="hover:text-amber-400 transition" />
-            </div> */}
           </div>
+
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+
           <p className="text-zinc-500 text-sm text-center md:text-left">
             © 2026 VistaVoyage. All Rights Reserved.
           </p>
 
           <div className="flex gap-6 text-sm text-zinc-500">
+
             <span className="hover:text-amber-400 cursor-pointer transition">
               Privacy
             </span>
+
             <span className="hover:text-amber-400 cursor-pointer transition">
               Terms
             </span>
+
             <span className="hover:text-amber-400 cursor-pointer transition">
               Sitemap
             </span>
+
           </div>
         </div>
+
       </div>
     </footer>
   );
