@@ -1,10 +1,9 @@
 const User = require("../models/User");
 
-// GET ALL USERS WITH PAGINATION
 const getAllUsers = async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1; // current page
-    const limit = parseInt(req.query.limit) || 5; // users per page
+    const page = parseInt(req.query.page) || 1; 
+    const limit = parseInt(req.query.limit) || 5; 
     const skip = (page - 1) * limit;
 
     const totalUsers = await User.countDocuments({ isAdmin: false });
@@ -26,7 +25,6 @@ const getAllUsers = async (req, res) => {
   }
 };
 
-// BLOCK / UNBLOCK USER
 const toggleBlockUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);

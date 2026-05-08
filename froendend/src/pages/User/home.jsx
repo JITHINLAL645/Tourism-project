@@ -1,15 +1,17 @@
 import { useState } from "react";
 import Navbar from "../../component/Home/Navbar";
 import Footer from "../../component/Home/Footer";
+import BookNowModal from "../../component/Home/BookNowModal";
 
 const Home = () => {
-  const [openIndex, setOpenIndex] = useState(1); 
+  const [openIndex, setOpenIndex] = useState(1);
+  const [showModal, setShowModal] = useState(false);
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const exploreItems = [
+   const exploreItems = [
     {
       title: "Flights to top cities from India",
       items: [
@@ -57,127 +59,140 @@ const Home = () => {
       <Navbar />
 
       <section id="home" className="relative min-h-screen flex items-center">
-  <img
-    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070"
-    alt="Travel"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
-
-  <div className="absolute inset-0 bg-black/60"></div>
-
-  <div className="relative z-20 max-w-6xl mx-auto px-6 text-center pt-20">
-
-    <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight text-white">
-      Your Adventure <br /> Awaits
-    </h1>
-
-    <p className="text-lg md:text-2xl text-zinc-300 max-w-3xl mx-auto mb-10">
-      Discover breathtaking destinations, curated tours, and unforgettable experiences.
-    </p>
-
-    <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
-      <a
-        href="#destinations"
-        className="px-10 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-amber-400 transition-all duration-300 text-lg"
-      >
-        Explore Destinations
-      </a>
-
-      <a
-        href="#explore"
-        className="px-10 py-4 border-2 border-white rounded-2xl font-semibold hover:bg-white/10 transition-all duration-300 text-lg text-white"
-      >
-        Book Now
-      </a>
-    </div>
-
-    <div className="flex justify-center">
-      <div className="flex items-center bg-white/10 backdrop-blur-md px-4 md:px-6 py-3 rounded-full border border-white/20 w-full max-w-2xl shadow-lg">
-        
-        <span className="text-red-500 text-xl mr-3">📍</span>
-
-        <input
-          type="text"
-          placeholder="Search destinations, cities, places..."
-          className="bg-transparent outline-none text-white placeholder-white/70 flex-1 text-sm md:text-base"
+        <img
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070"
+          alt="Travel"
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
-        <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-sm md:text-base transition">
-          Search
-        </button>
+        <div className="absolute inset-0 bg-black/60"></div>
 
-      </div>
-    </div>
+        <div className="relative z-20 max-w-6xl mx-auto px-6 text-center pt-20">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Your Adventure <br /> Awaits
+          </h1>
 
-  </div>
-</section>
+          <p className="text-lg md:text-2xl text-zinc-300 max-w-3xl mx-auto mb-10">
+            Discover breathtaking destinations, curated tours, and unforgettable
+            experiences.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
+            <a
+              href="#destinations"
+              className="px-10 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-amber-400 transition-all duration-300"
+            >
+              Explore Destinations
+            </a>
+
+            <button
+              onClick={() => setShowModal(true)}
+              className="px-10 py-4 border-2 border-white rounded-2xl font-semibold hover:bg-white/10 transition-all duration-300"
+            >
+              Book Now
+            </button>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="flex items-center bg-white/10 backdrop-blur-md px-4 md:px-6 py-3 rounded-full border border-white/20 w-full max-w-2xl shadow-lg">
+              <span className="text-red-500 text-xl mr-3">📍</span>
+
+              <input
+                type="text"
+                placeholder="Search destinations, cities, places..."
+                className="bg-transparent outline-none text-white placeholder-white/70 flex-1 text-sm md:text-base"
+              />
+
+              <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-sm md:text-base transition">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="destinations" className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Popular Destinations</h2>
-            <p className="text-zinc-400 text-lg">Choose your dream destination</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Popular Destinations
+            </h2>
+            <p className="text-zinc-400 text-lg">
+              Choose your dream destination
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-zinc-950 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 shadow-2xl border border-zinc-800">
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2070"
-                  alt="Bali"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute top-4 right-4 bg-black/70 px-3 py-1 rounded-full text-xs font-medium">
-                  Trending
-                </div>
-              </div>
+            <div className="bg-zinc-950 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 border border-zinc-800 shadow-xl">
+              <img
+                src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2070"
+                alt="Bali"
+                className="w-full h-80 object-cover group-hover:scale-110 transition duration-700"
+              />
+
               <div className="p-8">
                 <h3 className="text-3xl font-semibold mb-2">Bali, Indonesia</h3>
-                <p className="text-amber-400 font-medium text-lg">7 Days • From ₹89,999</p>
-                <p className="text-zinc-400 mt-4 mb-8 line-clamp-3">
-                  Paradise beaches, ancient temples, vibrant culture and unforgettable sunsets.
+                <p className="text-amber-400 font-medium text-lg">
+                  7 Days • From ₹89,999
                 </p>
-                <button className="w-full py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black font-semibold rounded-2xl hover:brightness-110 transition-all">
+                <p className="text-zinc-400 mt-4 mb-8">
+                   ancient temples and unforgettable sunsets.
+                </p>
+
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="w-full py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black font-semibold rounded-2xl"
+                >
                   View Package →
                 </button>
               </div>
             </div>
 
-            <div className="bg-zinc-950 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 shadow-2xl border border-zinc-800">
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070"
-                  alt="Dubai"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
+            <div className="bg-zinc-950 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 border border-zinc-800 shadow-xl">
+              <img
+                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070"
+                alt="Dubai"
+                className="w-full h-80 object-cover group-hover:scale-110 transition duration-700"
+              />
+
               <div className="p-8">
                 <h3 className="text-3xl font-semibold mb-2">Dubai, UAE</h3>
-                <p className="text-amber-400 font-medium text-lg">5 Days • From ₹1,29,999</p>
-                <p className="text-zinc-400 mt-4 mb-8 line-clamp-3">
-                  Luxury, skyscrapers, desert adventures in the city of the future.
+                <p className="text-amber-400 font-medium text-lg">
+                  5 Days • From ₹1,29,999
                 </p>
-                <button className="w-full py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black font-semibold rounded-2xl hover:brightness-110 transition-all">
+                <p className="text-zinc-400 mt-4 mb-8">
+                  Luxury, skyscrapers and desert adventures.
+                </p>
+
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="w-full py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black font-semibold rounded-2xl"
+                >
                   View Package →
                 </button>
               </div>
             </div>
 
-            <div className="bg-zinc-950 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 shadow-2xl border border-zinc-800">
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2070"
-                  alt="Paris"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
+            <div className="bg-zinc-950 rounded-3xl overflow-hidden group hover:scale-[1.02] transition-all duration-500 border border-zinc-800 shadow-xl">
+              <img
+                src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2070"
+                alt="Paris"
+                className="w-full h-80 object-cover group-hover:scale-110 transition duration-700"
+              />
+
               <div className="p-8">
                 <h3 className="text-3xl font-semibold mb-2">Paris, France</h3>
-                <p className="text-amber-400 font-medium text-lg">6 Days • From ₹1,49,999</p>
-                <p className="text-zinc-400 mt-4 mb-8 line-clamp-3">
-                  Romance, art, and iconic landmarks in the City of Light.
+                <p className="text-amber-400 font-medium text-lg">
+                  6 Days • From ₹1,49,999
                 </p>
-                <button className="w-full py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black font-semibold rounded-2xl hover:brightness-110 transition-all">
+                <p className="text-zinc-400 mt-4 mb-8">
+                  Romance, art and iconic landmarks.
+                </p>
+
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="w-full py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black font-semibold rounded-2xl"
+                >
                   View Package →
                 </button>
               </div>
@@ -235,6 +250,11 @@ const Home = () => {
       </section>
 
       <Footer />
+
+      <BookNowModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+      />
     </div>
   );
 };

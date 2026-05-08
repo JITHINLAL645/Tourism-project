@@ -66,7 +66,6 @@ function Navbar() {
           </h2>
         </div>
 
-        {/* Menu */}
         <ul className="hidden md:flex items-center gap-10 text-sm font-medium text-white">
 
           {[
@@ -86,7 +85,6 @@ function Navbar() {
                   {name}
                 </span>
 
-                {/* underline */}
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-amber-400 to-orange-500 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>

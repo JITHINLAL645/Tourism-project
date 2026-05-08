@@ -29,7 +29,6 @@ const Contact = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
 
-      {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <img
           src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=2070"

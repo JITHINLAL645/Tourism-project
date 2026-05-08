@@ -7,6 +7,7 @@ import About from "../pages/User/About";
 import Blog from "../pages/User/Blog";
 import Contact from "../pages/User/Contact";
 import Services from "../pages/User/Services";
+import Profile from "../pages/User/Profile";
 import Login from "../pages/Auth/Login";
 import Signup from "../pages/Auth/Signup";
 import AdminDashboard from "../pages/Admin/AdminDashboard";
@@ -59,6 +60,7 @@ function AppRoutes() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/adminusers" element={<AdminUsers />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   );

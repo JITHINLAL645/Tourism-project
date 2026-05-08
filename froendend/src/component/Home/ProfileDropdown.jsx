@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -30,6 +29,11 @@ function ProfileDropdown({ user, open, setOpen }) {
     window.location.reload();
   };
 
+  const goToProfile = () => {
+    navigate("/profile"); 
+    setOpen(false);
+  };
+
   return (
     <div className="relative" ref={dropdownRef}>
       
@@ -49,10 +53,7 @@ function ProfileDropdown({ user, open, setOpen }) {
           </div>
 
           <button
-            onClick={() => {
-              navigate("#profile");
-              setOpen(false);
-            }}
+            onClick={goToProfile}
             className="w-full text-left px-4 py-3 text-white hover:bg-zinc-900 transition"
           >
             Profile

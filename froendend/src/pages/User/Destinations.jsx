@@ -102,9 +102,7 @@ const Destinations = () => {
         <div className="absolute inset-0 bg-black/65"></div>
 
         <div className="relative z-20 max-w-6xl mx-auto px-6 text-center pt-20">
-          {/* <div className="inline-block bg-white/10 px-6 py-2 rounded-full mb-6 border border-white/20 text-sm tracking-wider">
-            EXPLORE AMAZING PLACES
-          </div> */}
+          
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
             Find Your Dream <br /> Destination
@@ -175,23 +173,7 @@ const Destinations = () => {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      {/* <section className="py-24 bg-zinc-950 border-t border-zinc-800">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Can't Find Your Dream Place?
-          </h2>
-
-          <p className="text-zinc-400 text-lg mb-10 max-w-2xl mx-auto">
-            Let our travel experts create a fully personalized trip based on
-            your budget and interests.
-          </p>
-
-          <button className="px-10 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-amber-400 transition-all duration-300 text-lg">
-            Get Custom Package
-          </button>
-        </div>
-      </section> */}
+      
 
       <Footer />
     </div>

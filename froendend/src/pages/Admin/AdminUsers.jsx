@@ -100,7 +100,6 @@ function AdminUsers() {
           )}
         </div>
 
-         {/* Pagination  */}
         <div className="flex justify-center items-center gap-4 pt-6">
           <button
             onClick={() => setPage(page - 1)}

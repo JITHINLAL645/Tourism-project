@@ -183,7 +183,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Newsletter */}
       {/* <section className="py-24 bg-zinc-950 border-t border-zinc-800">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">

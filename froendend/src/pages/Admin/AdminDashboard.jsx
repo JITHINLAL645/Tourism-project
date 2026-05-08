@@ -32,7 +32,6 @@ function AdminDashboard() {
   return (
     <div className="h-screen bg-black flex text-white overflow-hidden">
 
-      {/* Sidebar */}
       <div className="h-screen">
         <AdminSidebar />
       </div>
@@ -52,12 +51,12 @@ function AdminDashboard() {
 
           <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8  transition">
             <p className="text-zinc-400 mb-3 text-lg">Active Users</p>
-            <h2 className="text-5xl font-bold text-green-500">{activeUsers}</h2>
+            <h2 className="text-5xl font-bold text-white">{activeUsers}</h2>
           </div>
 
           <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8  transition">
             <p className="text-zinc-400 mb-3 text-lg">Blocked Users</p>
-            <h2 className="text-5xl font-bold text-red-500">{blockedUsers}</h2>
+            <h2 className="text-5xl font-bold text-white">{blockedUsers}</h2>
           </div>
 
         </div>

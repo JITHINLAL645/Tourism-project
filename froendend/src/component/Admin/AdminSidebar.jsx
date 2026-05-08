@@ -32,8 +32,8 @@ function AdminSidebar() {
 
           <button
             onClick={() => navigate("/admindashboard")}
-            className="w-full text-left px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-orange-500 text-black font-semibold"
-          >
+            className="w-full text-left px-5 py-3 rounded-2xl bg-zinc-900 hover:bg-zinc-800 transition"
+wwwwwwwwwww          >
             Dashboard
           </button>
 

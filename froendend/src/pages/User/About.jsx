@@ -8,7 +8,6 @@ const About = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
 
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
         <img
           src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070"
@@ -19,7 +18,6 @@ const About = () => {
         <div className="absolute inset-0 bg-black/70"></div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-6 pt-24 w-full">
-          {/* Back Button */}
           <Link
             to="/"
             className="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full border border-white/20 hover:bg-white/20 transition mb-8"
@@ -47,7 +45,6 @@ const About = () => {
 
       <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Image */}
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1200"

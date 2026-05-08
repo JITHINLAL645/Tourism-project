@@ -22,7 +22,6 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    /* Validation */
     if (!formData.email || !formData.password) {
       return toast.error("All fields required", {
         position: "top-right",
@@ -37,13 +36,11 @@ function Login() {
         formData
       );
 
-      /* Save Data */
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
       window.dispatchEvent(new Event("storage"));
 
-      /* Success Toast */
       toast.success("Login Successful!", {
         position: "top-right",
         autoClose: 1500,
