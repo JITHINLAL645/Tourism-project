@@ -17,7 +17,7 @@ function BookNowModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // page refresh stop
+    e.preventDefault(); 
     toast("Booking Submitted Successfully!");
     onClose(); 
   };
@@ -76,67 +76,74 @@ function BookNowModal({ isOpen, onClose }) {
 
             <form onSubmit={handleSubmit} className="space-y-6">
 
-              <div className="grid md:grid-cols-2 gap-5">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  required
-                  className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
-                />
+  <div className="grid md:grid-cols-2 gap-5">
+    <input
+      type="text"
+      placeholder="Your Name"
+      required
+      className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
+    />
 
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  required
-                  className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
-                />
-              </div>
+    <input
+      type="email"
+      placeholder="Your Email"
+      required
+      className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
+    />
+  </div>
 
-              <input
-                type="text"
-                placeholder="Search Destination..."
-                required
-                className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
-              />
+  <input
+    type="tel"
+    placeholder="Phone Number"
+    required
+    className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
+  />
 
-              <div className="grid md:grid-cols-2 gap-5">
-                <select
-                  required
-                  className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
-                >
-                  <option value="">Persons</option>
-                  <option>1 Person</option>
-                  <option>2 Persons</option>
-                  <option>3 Persons</option>
-                  <option>Family</option>
-                </select>
+  <input
+    type="text"
+    placeholder="Search Destination..."
+    required
+    className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
+  />
 
-                <select
-                  required
-                  className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
-                >
-                  <option value="">Categories</option>
-                  <option>Kids</option>
-                  <option>Couple</option>
-                  <option>Family</option>
-                  <option>Adventure</option>
-                </select>
-              </div>
+  <div className="grid md:grid-cols-2 gap-5">
+    <select
+      required
+      className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
+    >
+      <option value="">Persons</option>
+      <option>1 Person</option>
+      <option>2 Persons</option>
+      <option>3 Persons</option>
+      <option>Family</option>
+    </select>
 
-              <textarea
-                rows="5"
-                placeholder="Special Request"
-                className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none resize-none border border-zinc-700"
-              ></textarea>
+    <select
+      required
+      className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none border border-zinc-700"
+    >
+      <option value="">Categories</option>
+      <option>Kids</option>
+      <option>Couple</option>
+      <option>Family</option>
+      <option>Adventure</option>
+    </select>
+  </div>
 
-              <button
-                type="submit"
-                className="w-full py-5 rounded-2xl bg-white text-black font-bold text-xl hover:bg-zinc-300 transition"
-              >
-                Book Now
-              </button>
+  <textarea
+    rows="5"
+    placeholder="Special Request"
+    className="w-full bg-zinc-900 text-white rounded-2xl px-6 py-4 outline-none resize-none border border-zinc-700"
+  ></textarea>
 
-            </form>
+  <button
+    type="submit"
+    className="w-full py-5 rounded-2xl bg-white text-black font-bold text-xl hover:bg-zinc-300 transition"
+  >
+    Book Now
+  </button>
+
+</form>
           </div>
 
         </div>

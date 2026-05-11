@@ -12,7 +12,11 @@ import Login from "../pages/Auth/Login";
 import Signup from "../pages/Auth/Signup";
 import AdminDashboard from "../pages/Admin/AdminDashboard";
 import AdminUsers from "../pages/Admin/AdminUsers";
-
+import Bali  from "../pages/User/Bali";
+import Paris  from "../pages/User/Paris";
+import Dubai  from "../pages/User/Dubai";
+import Goa  from "../pages/User/Goa";
+import Maldives  from "../pages/User/Maldives";
 function PageLoader() {
   return (
     <div className="fixed inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center z-[9999]">
@@ -61,6 +65,11 @@ function AppRoutes() {
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/adminusers" element={<AdminUsers />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/bali" element={<Bali  />} />
+        <Route path="/paris" element={<Paris  />} />
+        <Route path="/dubai" element={<Dubai  />} />
+        <Route path="/goa" element={<Goa  />} />
+        <Route path="/maldives" element={<Maldives  />} />
       </Routes>
     </>
   );

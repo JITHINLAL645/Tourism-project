@@ -7,16 +7,16 @@ const Blog = () => {
 
   const blogPosts = [
     {
-      id: 1,
-      title: "Northern Lights Russia — The Complete Murmansk Aurora Guide",
-      category: "Russia • Murmansk",
-      date: "30 Apr",
-      image:
-        "https://images.unsplash.com/photo-1511497584788-8767609c8c3c?q=80&w=1200",
-      excerpt:
-        "Somewhere above the Arctic Circle in Murmansk, the sky turns electric green and the world feels magical.",
-      readTime: "8 min read",
-    },
+  id: 1,
+  title: "Northern Lights Russia — The Complete Murmansk Aurora Guide",
+  category: "Russia • Murmansk",
+  date: "30 Apr",
+  image:
+    "https://images.unsplash.com/photo-1579033462043-0f11a7862f7d?q=80&w=1200",
+  excerpt:
+    "Somewhere above the Arctic Circle in Murmansk, the sky turns electric green and the world feels magical.",
+  readTime: "8 min read",
+},
     {
       id: 2,
       title: "26 Most Beautiful Places to Visit in New Zealand",
@@ -51,16 +51,16 @@ const Blog = () => {
       readTime: "7 min read",
     },
     {
-      id: 5,
-      title: "Solo Travel in Iceland",
-      category: "Iceland",
-      date: "15 Apr",
-      image:
-        "https://images.unsplash.com/photo-1506059612708-20c5b2c5c8e3?q=80&w=1200",
-      excerpt:
-        "From glaciers to volcanoes, Iceland is a dream destination for solo travelers.",
-      readTime: "9 min read",
-    },
+  id: 5,
+  title: "Solo Travel in Iceland",
+  category: "Iceland",
+  date: "15 Apr",
+  image:
+    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200",
+  excerpt:
+    "From glaciers to volcanoes, Iceland is a dream destination for solo travelers.",
+  readTime: "9 min read",
+},
     {
       id: 6,
       title: "Best Street Food in Bangkok",
@@ -91,9 +91,7 @@ const Blog = () => {
         <div className="absolute inset-0 bg-black/65"></div>
 
         <div className="relative z-20 max-w-6xl mx-auto px-6 text-center pt-20">
-          {/* <div className="inline-block bg-white/10 px-6 py-2 rounded-full mb-6 border border-white/20 text-sm tracking-wider">
-             STORIES FROM AROUND THE WORLD
-          </div> */}
+         
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
             VistaVoyage <br /> Travel Blog
@@ -183,29 +181,7 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* <section className="py-24 bg-zinc-950 border-t border-zinc-800">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Stay Updated With VistaVoyage
-          </h2>
-
-          <p className="text-zinc-400 text-lg mb-10">
-            Get the latest travel blogs, destination tips and exclusive deals.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-6 py-4 bg-black border border-zinc-700 rounded-2xl text-white focus:outline-none focus:border-amber-400"
-            />
-
-            <button className="px-10 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-2xl font-semibold hover:brightness-110 transition-all">
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </section> */}
+     
 
       <Footer />
     </div>

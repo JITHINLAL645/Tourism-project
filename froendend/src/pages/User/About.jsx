@@ -27,9 +27,7 @@ const About = () => {
           </Link>
 
           <div className="max-w-4xl">
-            {/* <div className="inline-block bg-white/10 px-6 py-2 rounded-full mb-6 border border-white/20 text-sm tracking-wider">
-               ABOUT OUR JOURNEY
-            </div> */}
+            
 
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
               Discover The World <br /> With Us

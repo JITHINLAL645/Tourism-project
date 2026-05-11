@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../../component/Home/Navbar";
 import Footer from "../../component/Home/Footer";
 import BookNowModal from "../../component/Home/BookNowModal";
@@ -11,47 +12,79 @@ const Home = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-   const exploreItems = [
+  const exploreItems = [
     {
       title: "Flights to top cities from India",
       items: [
-        "Flights to Dubai", "Flights to Kuwait City", "Flights to Abu Dhabi",
-        "Flights to Riyadh", "Flights to Muscat", "Flights to Doha",
-        "Flights to Dammam", "Flights to Jeddah", "Flights to Sharjah",
-        "Flights to Manama", "Flights to Bangkok", "Flights to Ras al Khaimah"
-      ]
+        "Flights to Dubai",
+        "Flights to Kuwait City",
+        "Flights to Abu Dhabi",
+        "Flights to Riyadh",
+        "Flights to Muscat",
+        "Flights to Doha",
+        "Flights to Dammam",
+        "Flights to Jeddah",
+        "Flights to Sharjah",
+        "Flights to Manama",
+        "Flights to Bangkok",
+        "Flights to Ras al Khaimah",
+      ],
     },
     {
       title: "Flights to top countries from India",
       items: [
-        "Flights to United Arab Emirates", "Flights to Saudi Arabia",
-        "Flights to Kuwait", "Flights to Oman", "Flights to Qatar",
-        "Flights to Thailand", "Flights to Bahrain", "Flights to United States",
-        "Flights to Canada", "Flights to Malaysia", "Flights to Vietnam",
-        "Flights to Russian Federation"
-      ]
+        "Flights to United Arab Emirates",
+        "Flights to Saudi Arabia",
+        "Flights to Kuwait",
+        "Flights to Oman",
+        "Flights to Qatar",
+        "Flights to Thailand",
+        "Flights to Bahrain",
+        "Flights to United States",
+        "Flights to Canada",
+        "Flights to Malaysia",
+        "Flights to Vietnam",
+        "Flights to Russian Federation",
+      ],
     },
     {
       title: "Hotels in top cities",
       items: [
-        "Hotels in Goa", "Hotels in Mumbai", "Hotels in New Delhi",
-        "Hotels in Bangalore", "Hotels in Udaipur", "Hotels in Puri",
-        "Hotels in Jaipur", "Hotels in Varanasi", "Hotels in Hyderabad",
-        "Hotels in Kolkata", "Hotels in Dubai", "Hotels in Pattaya",
-        "Hotels in Bangkok"
-      ]
+        "Hotels in Goa",
+        "Hotels in Mumbai",
+        "Hotels in New Delhi",
+        "Hotels in Bangalore",
+        "Hotels in Udaipur",
+        "Hotels in Puri",
+        "Hotels in Jaipur",
+        "Hotels in Varanasi",
+        "Hotels in Hyderabad",
+        "Hotels in Kolkata",
+        "Hotels in Dubai",
+        "Hotels in Pattaya",
+        "Hotels in Bangkok",
+      ],
     },
     {
       title: "Hotels in top countries",
       items: [
-        "Hotels in Thailand", "Hotels in United Arab Emirates",
-        "Hotels in Singapore", "Hotels in Malaysia", "Hotels in Indonesia",
-        "Hotels in Vietnam", "Hotels in Nepal", "Hotels in Maldives",
-        "Hotels in United States", "Hotels in Saudi Arabia",
-        "Hotels in Sri Lanka", "Hotels in Japan", "Hotels in South Korea",
-        "Hotels in United Kingdom", "Hotels in China"
-      ]
-    }
+        "Hotels in Thailand",
+        "Hotels in United Arab Emirates",
+        "Hotels in Singapore",
+        "Hotels in Malaysia",
+        "Hotels in Indonesia",
+        "Hotels in Vietnam",
+        "Hotels in Nepal",
+        "Hotels in Maldives",
+        "Hotels in United States",
+        "Hotels in Saudi Arabia",
+        "Hotels in Sri Lanka",
+        "Hotels in Japan",
+        "Hotels in South Korea",
+        "Hotels in United Kingdom",
+        "Hotels in China",
+      ],
+    },
   ];
 
   return (
@@ -78,12 +111,12 @@ const Home = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
-            <a
-              href="#destinations"
+            <Link
+              to="/destinations"
               className="px-10 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-amber-400 transition-all duration-300"
             >
               Explore Destinations
-            </a>
+            </Link>
 
             <button
               onClick={() => setShowModal(true)}
@@ -136,7 +169,7 @@ const Home = () => {
                   7 Days • From ₹89,999
                 </p>
                 <p className="text-zinc-400 mt-4 mb-8">
-                   ancient temples and unforgettable sunsets.
+                  Ancient temples and unforgettable sunsets.
                 </p>
 
                 <button
@@ -204,45 +237,35 @@ const Home = () => {
       <section id="explore" className="py-24 bg-black">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Explore Popular Flights &amp; Hotels</h2>
-            <p className="text-zinc-400 text-lg">Best travel options from India</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Explore Popular Flights & Hotels
+            </h2>
+            <p className="text-zinc-400 text-lg">
+              Best travel options from India
+            </p>
           </div>
 
           <div className="space-y-4">
             {exploreItems.map((section, index) => (
               <div
                 key={index}
-                className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden hover:border-amber-400/30 transition-all duration-300"
+                className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden"
               >
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full px-8 py-6 flex items-center justify-between text-left group hover:bg-zinc-900"
+                  className="w-full px-8 py-6 flex justify-between"
                 >
-                  <h3 className="text-xl font-semibold group-hover:text-amber-400 transition-colors">
-                    {section.title}
-                  </h3>
-                  <span className={`text-3xl transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
-                    ↓
-                  </span>
+                  <h3 className="text-xl font-semibold">{section.title}</h3>
+                  <span>{openIndex === index ? "−" : "+"}</span>
                 </button>
 
-                <div
-                  className={`overflow-hidden transition-all duration-300 px-8 ${
-                    openIndex === index ? 'max-h-[600px] pb-8' : 'max-h-0'
-                  }`}
-                >
-                  <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 text-zinc-300">
+                {openIndex === index && (
+                  <div className="px-8 pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-zinc-300">
                     {section.items.map((item, i) => (
-                      <a
-                        key={i}
-                        href="#"
-                        className="hover:text-amber-400 transition-colors py-1 text-[15px]"
-                      >
-                        {item}
-                      </a>
+                      <p key={i}>{item}</p>
                     ))}
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>

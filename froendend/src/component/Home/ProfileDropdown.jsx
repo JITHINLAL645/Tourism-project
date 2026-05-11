@@ -1,7 +1,8 @@
+
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-function ProfileDropdown({ user, open, setOpen }) {
+function ProfileDropdown({ user, open, setOpen, profileImg }) {
   const dropdownRef = useRef();
   const navigate = useNavigate();
 
@@ -30,26 +31,26 @@ function ProfileDropdown({ user, open, setOpen }) {
   };
 
   const goToProfile = () => {
-    navigate("/profile"); 
+    navigate("/profile");
     setOpen(false);
   };
 
   return (
     <div className="relative" ref={dropdownRef}>
-      
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-10 h-10 rounded-full bg-orange-500 text-white font-bold text-lg flex items-center justify-center"
-      >
-        {user?.name?.charAt(0).toUpperCase()}
+      <button onClick={() => setOpen(!open)}>
+        <img
+          src={profileImg}
+          alt="Profile"
+          className="w-11 h-11 rounded-full object-cover border-2 border-orange-500"
+        />
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-3 w-52 bg-zinc-950 border border-zinc-800 rounded-2xl shadow-xl overflow-hidden">
+        <div className="absolute right-0 mt-3 w-56 bg-zinc-950 border border-zinc-800 rounded-2xl shadow-xl overflow-hidden">
 
           <div className="px-4 py-3 border-b border-zinc-800">
-            <p className="text-white font-semibold">{user.name}</p>
-            <p className="text-zinc-400 text-sm">{user.email}</p>
+            <p className="text-white font-semibold">{user?.name}</p>
+            <p className="text-zinc-400 text-sm">{user?.email}</p>
           </div>
 
           <button

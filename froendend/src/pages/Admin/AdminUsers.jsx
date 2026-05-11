@@ -12,7 +12,7 @@ function AdminUsers() {
   const fetchUsers = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/admin/users?page=${page}&limit=4`
+        `http://localhost:5000/api/admin/users?page=${page}&limit=4&search=${search}`
       );
 
       setUsers(res.data.users);
@@ -24,22 +24,16 @@ function AdminUsers() {
 
   useEffect(() => {
     fetchUsers();
-  }, [page]);
+  }, [page, search]);
 
   const toggleBlock = async (id) => {
     try {
       await axios.put(`http://localhost:5000/api/admin/block-user/${id}`);
-      fetchUsers();
+      fetchUsers(); 
     } catch (error) {
       console.log(error);
     }
   };
-
-  const filteredUsers = users.filter(
-    (user) =>
-      user.name.toLowerCase().includes(search.toLowerCase()) ||
-      user.email.toLowerCase().includes(search.toLowerCase())
-  );
 
   return (
     <div className="h-screen bg-black text-white flex overflow-hidden">
@@ -59,15 +53,18 @@ function AdminUsers() {
           placeholder="Search users..."
           className="w-full bg-zinc-900 border border-zinc-700 px-5 py-4 rounded-2xl mb-6 outline-none"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setPage(1); 
+          }}
         />
 
-        <div className="grid grid-cols-1 gap-4 flex-1">
+        <div className="grid grid-cols-1 gap-4 flex-1 overflow-auto">
 
-          {filteredUsers.length === 0 ? (
+          {users.length === 0 ? (
             <p className="text-zinc-400">No Users Found</p>
           ) : (
-            filteredUsers.map((user) => (
+            users.map((user) => (
               <div
                 key={user._id}
                 className="bg-zinc-950 border border-zinc-800 rounded-2xl p-5 flex justify-between items-center h-[110px]"
