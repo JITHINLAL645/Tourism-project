@@ -1,15 +1,48 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../component/Home/Navbar";
 import Footer from "../../component/Home/Footer";
 import BookNowModal from "../../component/Home/BookNowModal";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const [openIndex, setOpenIndex] = useState(1);
   const [showModal, setShowModal] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const navigate = useNavigate();
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const destinations = [
+    { name: "Goa", path: "/goa" },
+    { name: "Dubai", path: "/dubai" },
+    { name: "Paris", path: "/paris" },
+    { name: "Bali", path: "/bali" },
+    { name: "Maldives", path: "/maldives" },
+  ];
+
+  const handleSearch = () => {
+    const searchValue = searchTerm.trim().toLowerCase();
+
+    const result = destinations.find(
+      (item) => item.name.toLowerCase() === searchValue,
+    );
+
+    if (result) {
+      navigate(result.path);
+      setSearchTerm("");
+    } else {
+      toast("Destination not found");
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
   };
 
   const exploreItems = [
@@ -91,7 +124,7 @@ const Home = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
 
-      <section id="home" className="relative min-h-screen flex items-center">
+      <section className="relative min-h-screen flex items-center">
         <img
           src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070"
           alt="Travel"
@@ -113,30 +146,36 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
             <Link
               to="/destinations"
-              className="px-10 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-amber-400 transition-all duration-300"
+              className="px-10 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-amber-400 transition"
             >
               Explore Destinations
             </Link>
 
             <button
               onClick={() => setShowModal(true)}
-              className="px-10 py-4 border-2 border-white rounded-2xl font-semibold hover:bg-white/10 transition-all duration-300"
+              className="px-10 py-4 border-2 border-white rounded-2xl font-semibold hover:bg-white/10 transition"
             >
               Book Now
             </button>
           </div>
 
           <div className="flex justify-center">
-            <div className="flex items-center bg-white/10 backdrop-blur-md px-4 md:px-6 py-3 rounded-full border border-white/20 w-full max-w-2xl shadow-lg">
+            <div className="flex items-center bg-white/10 backdrop-blur-md px-4 py-3 rounded-full border border-white/20 w-full max-w-2xl shadow-lg">
               <span className="text-red-500 text-xl mr-3">📍</span>
 
               <input
                 type="text"
-                placeholder="Search destinations, cities, places..."
-                className="bg-transparent outline-none text-white placeholder-white/70 flex-1 text-sm md:text-base"
+                placeholder="Search Goa, Dubai, Paris..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={handleKeyDown}
+                className="bg-transparent outline-none text-white placeholder-white/70 flex-1"
               />
 
-              <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-sm md:text-base transition">
+              <button
+                onClick={handleSearch}
+                className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full transition"
+              >
                 Search
               </button>
             </div>
@@ -274,10 +313,7 @@ const Home = () => {
 
       <Footer />
 
-      <BookNowModal
-        isOpen={showModal}
-        onClose={() => setShowModal(false)}
-      />
+      <BookNowModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </div>
   );
 };
